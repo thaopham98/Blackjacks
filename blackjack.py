@@ -4,7 +4,10 @@ import random
 Define card suits and ranks
 """
 suits = ("Spades", "Clubs", "Hearts", "Diamonds")
-ranks = {"A": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10,"K": 10}
+ranks = {
+        "A": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, 
+        "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10,"K": 10
+         }
 
 
 # CLASS DEFINTIONS:
@@ -70,22 +73,25 @@ def show_all_cards(player, dealer):
 while True:
     print('\n-----    The play is starting    -----')
 
-    # Create & shuffle the deck, deal two cards to each player
+    """ Create & shuffle the deck, deal two cards to each player """
     deck = Deck()
     deck.shuffle()
 
     player_hand = Hand()
     dealer_hand = Hand()
 
-    """ Deal 2 cards to each player"""
+    """ Deal 2 cards to each player """
     for i in range(2): #Both the player & dealer have 2 cards at the beginning.
         player_hand.add_card(deck.deal())
         dealer_hand.add_card(deck.deal())
 
-    # Showing the player's and dealer's cards:
-    show_all_cards(player_hand, dealer_hand)
+    show_all_cards(player_hand, dealer_hand) # Showing the player's and dealer's cards:
 
-    # Player's turn: while the player's poins lesser than 21, ask the player if they want to another card or not
+    """
+    Player's turn: 
+    while the player's poins lesser than 21, 
+    ask the player if they want to another card or not
+    """    
     while player_hand.points < 21 and input('\nDo you want another card? [y/Y]: ').lower() == 'y':
         player_hand.add_card(deck.deal()) # add another card if player answers yes
         show_all_cards(player_hand, dealer_hand) # display the current cards of both players
