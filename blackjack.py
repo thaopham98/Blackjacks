@@ -9,7 +9,7 @@ ranks = {
         "8": 8, "9": 9, "10": 10, "J": 10, "Q": 10,"K": 10
          }
 
-""" Another way to define `ranks """
+""" Another way to define `ranks` """
 # ranks = {str(i): i for i in range(2, 11)}  # Numbers 2-10
 # ranks.update({"A": 1, "J": 10, "Q": 10, "K": 10})  # Face cards and Ace
 
